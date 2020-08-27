@@ -18,10 +18,20 @@ body {
   padding: 15px 0;
   text-align: center;
 }
+.resetBtn {
+  color: aliceblue;
+  font-size: 20px;
+  border: 2px solid aliceblue;
+  background-color: rgb(112, 9, 9);
+  padding: 10px;
+}
+.resetBtn:hover {
+  cursor: pointer;
+}
 #minecraft {
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 1000px 1fr 200px;
+  grid-template-columns: 1fr 1000px 1fr 250px;
 }
 #world {
   height: 100%;
@@ -38,8 +48,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 20px;
-  padding-bottom: 40px;
+  padding: 30px;
 }
 
 /* tools */

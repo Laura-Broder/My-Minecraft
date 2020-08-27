@@ -23,8 +23,13 @@ function createMatrix() {
     }
   }
 }
-function resetWorld() {
+
+function createFirstGame() {
   createMatrix();
+  resetWorld();
+}
+
+function resetWorld() {
   // sky
   for (let row = 0; row < worldSize; row++) {
     for (let col = 0; col < worldSize; col++) {
@@ -76,7 +81,7 @@ function resetWorld() {
 }
 
 let worldMatrix = [];
-resetWorld();
+createFirstGame();
 // console.table(worldMatrix);
 
 // sideToolBar
@@ -131,9 +136,8 @@ creatInventoryItem("leaves");
 creatInventoryItem("rock");
 creatInventoryItem("dirt");
 
-// add inventory counter
-// const trunkCounter = document.createElement("span");
-// trunkCounter.classList.add("counter");
-// trunk.appendChild(trunk);
-
-// console.table(worldMatrix[row][col]);
+// set reset world button
+const resetButton = document.createElement("button");
+resetButton.textContent = "Reset World";
+resetButton.classList.add("resetBtn");
+sideToolBar.insertAdjacentElement("beforeend", resetButton);

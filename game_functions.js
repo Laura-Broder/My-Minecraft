@@ -1,3 +1,6 @@
+// reset game button
+resetButton.addEventListener("click", resetWorld);
+
 function handleTileClick(event) {
   let pressedTileType = event.currentTarget.getAttribute("data-type");
   // if a tool or element were selected:
