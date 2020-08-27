@@ -1,0 +1,134 @@
+:root {
+  --world-size: 20;
+}
+
+@font-face {
+  font-family: minecraftFont;
+  src: url("./minecraft_font/MinecraftBold-nMK1.otf");
+}
+body {
+  height: 100vh;
+  font-family: minecraftFont;
+  color: aliceblue;
+
+  /* letter-spacing: 1rem; */
+}
+.header {
+  color: aliceblue;
+  padding: 15px 0;
+  text-align: center;
+}
+#minecraft {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1000px 1fr 200px;
+}
+#world {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(var(--world-size), auto);
+  grid-template-rows: repeat(var(--world-size), auto);
+  grid-gap: 0;
+  grid-column: 2 / 2;
+}
+#sideToolBar {
+  height: 100%;
+  grid-column: 4 / 4;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* tools */
+#tools {
+}
+.toolsList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.toolBox {
+  margin: 10px 0;
+  height: 100px;
+  width: 100px;
+  border: 1px solid white;
+  background: center / 50% no-repeat;
+  padding: 5px;
+}
+[data-type="axe"] {
+  background-image: url("./img/PinClipart.com_axe-clip-art_5397833.png");
+}
+
+[data-type="pickaxe"] {
+  background-image: url("./img/PinClipart.com_minecraft-birthday-clipart_751039.png");
+}
+
+[data-type="shovel"] {
+  background-image: url("./img/PinClipart.com_shovel-clip-art_3735821.png");
+}
+
+/* inventory */
+#inventory {
+}
+.inventoryList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inventoryBox {
+  margin: 10px 0;
+  height: 50px;
+  width: 50px;
+  border: 1px solid white;
+  background: center / cover no-repeat;
+  font-size: 1.5rem;
+  text-align: center;
+}
+/* tiles */
+.tile {
+  height: 100%;
+  width: 100%;
+  /* border: none; */
+  /* border: 1px solid black; */
+  background: center / cover no-repeat;
+  overflow: hidden;
+}
+
+[data-type="sky"] {
+  background-color: rgb(50, 157, 245);
+}
+[data-type="cloud"] {
+  background-color: rgb(242, 247, 251);
+}
+
+[data-type="trunk"] {
+  background-image: url("./img/tree_trunk_block.jfif");
+}
+
+[data-type="leaves"] {
+  background-image: url("./img/leaves_block.png");
+}
+
+[data-type="rock"] {
+  background-image: url("./img/stone_block.png");
+}
+
+[data-type="dirt"] {
+  background-image: url("./img/dirt_block.jpg");
+}
+
+/* action style */
+.tile:hover {
+  border: 1px solid white;
+  /* margin: -1px;
+  overflow: hidden; */
+}
+.toolBox.selected {
+  background-color: blue;
+}
+.inventoryBox.selected {
+  border: 3px solid blue;
+}
