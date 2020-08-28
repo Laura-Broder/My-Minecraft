@@ -177,7 +177,7 @@ body {
   left: 0;
   background: center repeat;
   background-image: url("./img/dirt_block.jpg");
-  padding: 50px 10px;
+  padding: 50px 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -198,15 +198,13 @@ body {
   cursor: pointer;
   box-shadow: 5px 5px 5px black;
 }
-#landingPage.hidden {
-  display: none;
-}
+
 .tutorial-container {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.801);
-  padding: 50px 100px;
+  padding: 50px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
   grid-template-rows: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
@@ -221,4 +219,8 @@ body {
   justify-self: center;
   font-family: minecraftFontItalic;
   font-size: 23px;
+  text-align: right;
+}
+#landingPage.hidden {
+  display: none;
 }

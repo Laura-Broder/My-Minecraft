@@ -15,12 +15,3 @@ function restartGame() {
   landingPage.classList.remove("hidden");
   resetWorld();
 }
-
-// tutorial
-// select tutorial container
-const tutorialContainer = document.querySelector(".tutorial-container");
-const col1 = document.querySelector(".col1");
-const col2 = document.querySelector(".col2");
-const col3 = document.querySelector(".col3");
-
-const 
