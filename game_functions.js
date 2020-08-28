@@ -1,6 +1,7 @@
 // reset game button
 resetButton.addEventListener("click", resetWorld);
 
+// handle click on  a tile in the game world
 function handleTileClick(event) {
   let pressedTileType = event.currentTarget.getAttribute("data-type");
   // if a tool or element were selected:
@@ -65,6 +66,10 @@ function placeTheTile(tileOut, tileIn) {
 
 // increase inventory count
 function addToInventory(tileToMine) {
+  console.log(
+    document.querySelector(`[data-type=${tileToMine}].inventoryBox`)
+      .textContent,
+  );
   document.querySelector(`[data-type=${tileToMine}].inventoryBox`).textContent =
     parseInt(
       document.querySelector(`[data-type=${tileToMine}].inventoryBox`)

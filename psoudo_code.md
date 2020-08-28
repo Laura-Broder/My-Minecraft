@@ -73,3 +73,26 @@ fill the containers:
   - basic: only sky[0] and dirt[5]
     - loop top of world add data type sky
     - loop bottom of world add data type dirt
+
+```
+<div class="col1">
+  <h2>Pick a Tool</h2>
+  <h2>collect Elements</h2>
+  <h2>Place Elements on Empty Space</h2>
+</div>
+<div class="col2">
+  <h2>Pick a Tool</h2>
+  <h2>collect Elements</h2>
+  <h2>Place Elements on Empty Space</h2>
+</div>
+<div class="col3">
+  <h2>Pick a Tool</h2>
+  <h2>collect Elements</h2>
+  <h2>Place Elements on Empty Space</h2>
+</div>
+<div class="col4">
+  <h2>Pick a Tool</h2>
+  <h2>collect Elements</h2>
+  <h2>Place Elements on Empty Space</h2>
+</div>
+```

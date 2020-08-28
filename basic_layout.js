@@ -1,7 +1,7 @@
 // world size variables:
 const worldSize = 20;
 
-// select layout
+// select layout containers
 const minecraft = document.querySelector("#minecraft");
 const world = document.querySelector("#world");
 const sideToolBar = document.querySelector("#sideToolBar");
@@ -23,7 +23,7 @@ function createMatrix() {
     }
   }
 }
-
+// reset the world tiles to the origin
 function resetWorld() {
   // sky
   for (let row = 0; row < worldSize; row++) {
@@ -74,18 +74,20 @@ function resetWorld() {
     worldMatrix[10][col].setAttribute("data-type", "leaves");
   }
 }
-
+// create the game the first time the webpage is opened
 function createFirstGame() {
   createMatrix();
   resetWorld();
+  // display landing page
+  landingPage.classList.remove("hidden");
 }
-
+// call create first game function
 let worldMatrix = [];
 createFirstGame();
 
 // sideToolBar
 // add header
-const sidebarHeader = document.createElement("h2");
+const sidebarHeader = document.createElement("h1");
 sidebarHeader.textContent = "Inventory";
 sidebarHeader.classList.add("header");
 sideToolBar.insertAdjacentElement("afterbegin", sidebarHeader);
@@ -93,7 +95,7 @@ sideToolBar.insertAdjacentElement("afterbegin", sidebarHeader);
 // add tools
 // add header
 const toolsHeader = document.createElement("h2");
-toolsHeader.textContent = "tools";
+toolsHeader.textContent = "Tools";
 toolsHeader.classList.add("header");
 tools.insertAdjacentElement("afterbegin", toolsHeader);
 // create a tools
@@ -135,8 +137,14 @@ creatInventoryItem("leaves");
 creatInventoryItem("rock");
 creatInventoryItem("dirt");
 
-// set reset world button
+// create reset world button
 const resetButton = document.createElement("button");
 resetButton.textContent = "Reset World";
 resetButton.classList.add("resetBtn");
 sideToolBar.insertAdjacentElement("beforeend", resetButton);
+
+// create restart game button
+const restartGameButton = document.createElement("button");
+restartGameButton.textContent = "Restart Game";
+restartGameButton.classList.add("restartGameButton");
+sideToolBar.insertAdjacentElement("beforeend", restartGameButton);
