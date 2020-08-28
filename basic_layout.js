@@ -1,12 +1,12 @@
+// world size variables:
+const worldSize = 20;
+
 // select layout
 const minecraft = document.querySelector("#minecraft");
 const world = document.querySelector("#world");
 const sideToolBar = document.querySelector("#sideToolBar");
 const tools = document.querySelector("#tools");
 const inventory = document.querySelector("#inventory");
-
-// world size variables:
-const worldSize = 20;
 
 // make a matrix of 10*10 of sky:
 function createMatrix() {
@@ -22,11 +22,6 @@ function createMatrix() {
       world.appendChild(worldMatrix[row][col]);
     }
   }
-}
-
-function createFirstGame() {
-  createMatrix();
-  resetWorld();
 }
 
 function resetWorld() {
@@ -80,9 +75,13 @@ function resetWorld() {
   }
 }
 
+function createFirstGame() {
+  createMatrix();
+  resetWorld();
+}
+
 let worldMatrix = [];
 createFirstGame();
-// console.table(worldMatrix);
 
 // sideToolBar
 // add header

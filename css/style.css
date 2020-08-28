@@ -27,6 +27,7 @@ body {
 }
 .resetBtn:hover {
   cursor: pointer;
+  box-shadow: 5px 5px 5px rgb(194, 150, 150);
 }
 #minecraft {
   height: 100%;
@@ -96,14 +97,12 @@ body {
   font-size: 1.5rem;
   text-align: center;
 }
+
 /* tiles */
 .tile {
   height: 100%;
   width: 100%;
-  /* border: none; */
-  /* border: 1px solid black; */
   background: center / cover no-repeat;
-  overflow: hidden;
 }
 
 [data-type="sky"] {
@@ -132,12 +131,17 @@ body {
 /* action style */
 .tile:hover {
   border: 1px solid white;
-  /* margin: -1px;
-  overflow: hidden; */
+  margin: -1px;
 }
+
 .toolBox.selected {
   background-color: blue;
 }
 .inventoryBox.selected {
   border: 3px solid blue;
+}
+.inventoryBox:hover,
+.toolBox:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 5px rgb(194, 150, 150);
 }
