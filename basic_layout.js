@@ -1,5 +1,6 @@
 // world size variables:
-const worldSize = 20;
+const worldSize = 30;
+const groundHight = worldSize / 2 + 2;
 
 // select layout containers
 const minecraft = document.querySelector("#minecraft");
@@ -24,14 +25,16 @@ function createMatrix() {
   }
 }
 // reset the world tiles to the origin
-function resetWorld() {
-  // sky
+// sky
+function createSky() {
   for (let row = 0; row < worldSize; row++) {
     for (let col = 0; col < worldSize; col++) {
       worldMatrix[row][col].setAttribute("data-type", "sky");
     }
   }
-  // cloud
+}
+// cloud
+function createCloud() {
   for (let row = 6; row < 8; row++) {
     for (let col = 4; col < 9; col++) {
       worldMatrix[row][col].setAttribute("data-type", "cloud");
@@ -41,38 +44,46 @@ function resetWorld() {
   worldMatrix[5][5].setAttribute("data-type", "cloud");
   worldMatrix[7][9].setAttribute("data-type", "cloud");
   worldMatrix[7][3].setAttribute("data-type", "cloud");
-
-  // dirt
-  for (let row = 13; row < worldSize; row++) {
+}
+// dirt
+function createGround(fromLine) {
+  console.log(fromLine);
+  for (let row = fromLine; row < worldSize; row++) {
     for (let col = 0; col < worldSize; col++) {
       worldMatrix[row][col].setAttribute("data-type", "dirt");
     }
   }
-  // rock
-  for (let col = 3; col < 6; col++) {
-    worldMatrix[12][col].setAttribute("data-type", "rock");
+}
+// rock
+function createRock(fromLine) {
+  for (let col = 3; col < 9; col++) {
+    worldMatrix[fromLine - 1][col].setAttribute("data-type", "rock");
   }
-  for (let col = 3; col < 6; col++) {
-    worldMatrix[11][col].setAttribute("data-type", "rock");
+  for (let col = 3; col < 8; col++) {
+    worldMatrix[fromLine - 2][col].setAttribute("data-type", "rock");
   }
-  // tree
-  for (let row = 8; row < 13; row++) {
-    worldMatrix[row][15].setAttribute("data-type", "trunk");
+}
+// tree
+function createTree(fromLine) {
+  for (let row = fromLine - 5; row < fromLine; row++) {
+    worldMatrix[row][(worldSize * 2) / 3].setAttribute("data-type", "trunk");
   }
-  for (let row = 3; row < 8; row++) {
-    for (let col = 13; col < 18; col++) {
+  for (let row = fromLine - 10; row < fromLine - 5; row++) {
+    for (
+      let col = (worldSize * 2) / 3 - 2;
+      col < (worldSize * 2) / 3 + 3;
+      col++
+    ) {
       worldMatrix[row][col].setAttribute("data-type", "leaves");
     }
   }
-  for (let col = 6; col < 9; col++) {
-    worldMatrix[12][col].setAttribute("data-type", "leaves");
-  }
-  for (let col = 6; col < 8; col++) {
-    worldMatrix[11][col].setAttribute("data-type", "leaves");
-  }
-  for (let col = 5; col < 8; col++) {
-    worldMatrix[10][col].setAttribute("data-type", "leaves");
-  }
+}
+function resetWorld() {
+  createSky();
+  createCloud();
+  createGround(groundHight);
+  createRock(groundHight);
+  createTree(groundHight);
 }
 // create the game the first time the webpage is opened
 function createFirstGame() {

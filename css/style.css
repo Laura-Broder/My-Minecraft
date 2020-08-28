@@ -1,5 +1,6 @@
 :root {
-  --world-size: 20;
+  --world-size: 30;
+  font-size: 62.5%;
 }
 
 @font-face {
@@ -34,11 +35,11 @@ body {
 .restartGameButton,
 .resetBtn {
   color: aliceblue;
-  font-size: 20px;
+  font-size: 1.5rem;
   border: 2px solid aliceblue;
   background-color: rgb(112, 9, 9);
-  padding: 10px;
-  margin-bottom: 15px;
+  padding: 1vh;
+  margin-bottom: 1vh;
 }
 .restartGameButton:hover,
 .resetBtn:hover {
@@ -47,8 +48,8 @@ body {
 }
 .tutEl {
   margin: 5px 0;
-  height: 40px;
-  width: 40px;
+  height: 4vh;
+  width: 4vh;
   border: 1px solid white;
   background: center / cover no-repeat;
   padding: 5px;
@@ -57,7 +58,7 @@ body {
 #minecraft {
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 1000px 1fr 250px;
+  grid-template-columns: 1fr 100vh 1fr 15vw;
 }
 #world {
   height: 100%;
@@ -66,6 +67,7 @@ body {
   grid-template-rows: repeat(var(--world-size), auto);
   grid-gap: 0;
   grid-column: 2 / 2;
+  /* overflow-x: scroll; */
 }
 #sideToolBar {
   height: 100%;
@@ -74,7 +76,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10px 30px;
+  padding: 2vh 2vw;
 }
 
 /* tools */
@@ -85,15 +87,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 30px;
+  padding-bottom: 2vh;
 }
 .toolBox {
+  font-size: 1.4rem;
   margin: 5px 0;
-  height: 100px;
-  width: 100px;
+  height: 10vh;
+  width: 10vh;
   border: 1px solid white;
   background: center / 50% no-repeat;
-  padding: 5px;
+  padding: 0.2rem;
 }
 [data-type="axe"] {
   background-image: url("./img/PinClipart.com_axe-clip-art_5397833.png");
@@ -113,8 +116,8 @@ body {
 
 .inventoryBox {
   margin: 5px 0;
-  height: 50px;
-  width: 50px;
+  height: 5vh;
+  width: 5vh;
   border: 1px solid white;
   background: center / cover no-repeat;
   font-size: 1.5rem;
@@ -177,7 +180,7 @@ body {
   left: 0;
   background: center repeat;
   background-image: url("./img/dirt_block.jpg");
-  padding: 50px 100px;
+  padding: 5vh 10vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -185,14 +188,14 @@ body {
 }
 .minecraftTitle {
   width: 80vw;
-  padding-bottom: 20px;
+  padding-bottom: 2vh;
 }
 .startBtn {
   color: black;
-  font-size: 40px;
+  font-size: 4rem;
   border: 2px solid black;
   background-color: aliceblue;
-  padding: 20px 40px;
+  padding: 2vh 4vw;
 }
 .startBtn:hover {
   cursor: pointer;
@@ -202,24 +205,34 @@ body {
 .tutorial-container {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.801);
-  padding: 50px;
+  padding: 5vw;
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
   grid-template-rows: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
-  gap: 10px;
+  gap: 1vw;
 }
 .tutorial-container h2 {
   justify-self: start;
   font-family: minecraftFontRegular;
-  font-size: 30px;
+  font-size: 3rem;
 }
 .tutorial-container h3 {
   justify-self: center;
   font-family: minecraftFontItalic;
-  font-size: 23px;
+  font-size: 2rem;
   text-align: right;
+}
+.tutorial-container h4 {
+  justify-self: center;
+  font-family: minecraftFontItalic;
+  font-size: 2rem;
+  text-align: center;
+}
+.tutorial-container .toolBox:hover {
+  cursor: auto;
+  box-shadow: none;
 }
 #landingPage.hidden {
   display: none;

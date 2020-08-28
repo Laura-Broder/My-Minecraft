@@ -58,7 +58,7 @@ function mineTheTile(tileToMine, toolToUse) {
 }
 // place a tile from the inventory
 function placeTheTile(tileOut, tileIn) {
-  if (tileOut === ("sky" || "cloud")) {
+  if (tileOut === "sky" || tileOut === "cloud") {
     removeFromInventory(tileIn);
     event.currentTarget.setAttribute("data-type", tileIn);
   }
