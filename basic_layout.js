@@ -1,6 +1,8 @@
 // world size variables:
-const worldSize = 30;
+const worldSize = 20;
 const groundHight = worldSize / 2 + 2;
+
+document.documentElement.style.setProperty("--world-size", worldSize);
 
 // select layout containers
 const minecraft = document.querySelector("#minecraft");
@@ -25,6 +27,7 @@ function createMatrix() {
   }
 }
 // reset the world tiles to the origin
+
 // sky
 function createSky() {
   for (let row = 0; row < worldSize; row++) {
@@ -47,7 +50,6 @@ function createCloud() {
 }
 // dirt
 function createGround(fromLine) {
-  console.log(fromLine);
   for (let row = fromLine; row < worldSize; row++) {
     for (let col = 0; col < worldSize; col++) {
       worldMatrix[row][col].setAttribute("data-type", "dirt");
@@ -66,14 +68,10 @@ function createRock(fromLine) {
 // tree
 function createTree(fromLine) {
   for (let row = fromLine - 5; row < fromLine; row++) {
-    worldMatrix[row][(worldSize * 2) / 3].setAttribute("data-type", "trunk");
+    worldMatrix[row][fromLine + 2].setAttribute("data-type", "trunk");
   }
   for (let row = fromLine - 10; row < fromLine - 5; row++) {
-    for (
-      let col = (worldSize * 2) / 3 - 2;
-      col < (worldSize * 2) / 3 + 3;
-      col++
-    ) {
+    for (let col = fromLine; col < fromLine + 5; col++) {
       worldMatrix[row][col].setAttribute("data-type", "leaves");
     }
   }
