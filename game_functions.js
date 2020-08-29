@@ -105,7 +105,6 @@ fullInventoryNodeList.forEach((el) => {
 });
 
 // add event listener to every tile
-console.log(worldSize);
 for (let row = 0; row < worldSize; row++) {
   for (let col = 0; col < worldSize; col++) {
     worldMatrix[row][col].addEventListener("click", handleTileClick);
