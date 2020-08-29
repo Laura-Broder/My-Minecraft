@@ -23,6 +23,7 @@ function handleTileClick(event) {
   }
 }
 // check if accessible for mining
+// bug: can't mine top row, can't read attribute of the higher row
 function isMinable(tile) {
   const tileRow = parseInt(tile.getAttribute("data-row"));
   const tileCol = parseInt(tile.getAttribute("data-col"));
@@ -104,6 +105,7 @@ fullInventoryNodeList.forEach((el) => {
 });
 
 // add event listener to every tile
+console.log(worldSize);
 for (let row = 0; row < worldSize; row++) {
   for (let col = 0; col < worldSize; col++) {
     worldMatrix[row][col].addEventListener("click", handleTileClick);

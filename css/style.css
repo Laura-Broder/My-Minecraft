@@ -75,7 +75,7 @@ body {
   background-color: black;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   padding: 2vh 2vw;
 }
 
@@ -188,12 +188,12 @@ body {
   padding: 5vh 10vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
 .minecraftTitle {
   width: 80vw;
-  padding-bottom: 2vh;
+  /* padding-bottom: 2vh; */
 }
 .startBtn {
   color: black;
@@ -212,13 +212,21 @@ body {
 .tutorial-container {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.801);
-  padding: 5vw;
+  padding: 1vh 5vw;
+  padding-bottom: 3vh;
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: auto repeat(3, 1fr);
   justify-items: center;
   align-items: center;
   gap: 1vw;
+}
+.tutorialHeader {
+  grid-row: 1/1;
+  grid-column: 1/5;
+  font-size: 5rem;
+  padding-bottom: 1vh;
+  font-family: minecraftFontRegular;
 }
 .tutorial-container h2 {
   justify-self: start;
@@ -243,6 +251,11 @@ body {
 }
 #landingPage.hidden {
   display: none;
+}
+.credit {
+  text-align: right;
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px black;
 }
 
 @media all and (max-width: 950px) {
