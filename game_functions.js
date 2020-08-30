@@ -67,10 +67,6 @@ function placeTheTile(tileOut, tileIn) {
 
 // increase inventory count
 function addToInventory(tileToMine) {
-  console.log(
-    document.querySelector(`[data-type=${tileToMine}].inventoryBox`)
-      .textContent,
-  );
   document.querySelector(`[data-type=${tileToMine}].inventoryBox`).textContent =
     parseInt(
       document.querySelector(`[data-type=${tileToMine}].inventoryBox`)
@@ -98,15 +94,7 @@ function handleInventoryClick(event) {
 }
 // select all inventory items
 const fullInventoryNodeList = document.querySelectorAll("#sideToolBar li");
-
 // add event listener to the tools and elements inventory items
 fullInventoryNodeList.forEach((el) => {
   el.addEventListener("click", handleInventoryClick);
 });
-
-// add event listener to every tile
-for (let row = 0; row < worldSize; row++) {
-  for (let col = 0; col < worldSize; col++) {
-    worldMatrix[row][col].addEventListener("click", handleTileClick);
-  }
-}

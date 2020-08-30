@@ -131,9 +131,10 @@ body {
   height: 100%;
   width: 100%;
   background: center / cover no-repeat;
-  transition: background-color 0.5s ease-in-out;
-  transition: border 0.5s ease-in;
-  /* transition: background-image 0.5s ease-in-out; */
+  transition: background-image 1s ease-in-out;
+  /* transition: border, margin none; */
+  /* transition: border 0.5s ease-in;
+  transition: background-image 0.5s ease-in-out; */
 }
 
 [data-type="sky"] {

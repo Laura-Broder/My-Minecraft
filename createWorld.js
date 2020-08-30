@@ -9,6 +9,7 @@ const world = document.querySelector("#world");
 
 // make a matrix of 10*10 of sky:
 function createMatrix() {
+  // console.log(world);
   for (let row = 0; row < worldSize; row++) {
     worldMatrix[row] = [];
     for (let col = 0; col < worldSize; col++) {
@@ -54,11 +55,10 @@ function createGround(fromLine) {
 }
 // rock
 function createRock(fromLine) {
-  for (let col = 3; col < 9; col++) {
-    worldMatrix[fromLine - 1][col].setAttribute("data-type", "rock");
-  }
-  for (let col = 3; col < 8; col++) {
-    worldMatrix[fromLine - 2][col].setAttribute("data-type", "rock");
+  for (let row = fromLine - 1, rockWidth = 9; row > 0; row--, rockWidth--) {
+    for (let col = 0; col < rockWidth; col++) {
+      worldMatrix[row][col].setAttribute("data-type", "rock");
+    }
   }
 }
 // tree
@@ -71,8 +71,25 @@ function createTree(fromLine) {
       worldMatrix[row][col].setAttribute("data-type", "leaves");
     }
   }
+
+  for (let row = fromLine - 1; row > fromLine - 8; row--) {
+    worldMatrix[row][fromLine - 4].setAttribute("data-type", "trunk");
+  }
+  for (let row = fromLine - 12; row < fromLine - 7; row++) {
+    for (let col = fromLine - 5; col < fromLine - 2; col++) {
+      worldMatrix[row][col].setAttribute("data-type", "leaves");
+    }
+  }
 }
-function resetWorld() {
+// reset inventory
+function resetInventory() {
+  document
+    .querySelectorAll(".inventoryBox")
+    .forEach((el) => (el.textContent = 0));
+}
+
+function resetWorld(size) {
+  resetInventory();
   createSky();
   createCloud();
   createGround(groundHight);
@@ -80,12 +97,13 @@ function resetWorld() {
   createTree(groundHight);
 }
 // create the game the first time the webpage is opened
-function createFirstGame() {
-  createMatrix();
-  resetWorld();
-  // display landing page
-  landingPage.classList.remove("hidden");
-}
+// function createFirstGame() {
+//   console.log(world.childElementCount);
+//   createMatrix();
+//   console.log(world.childElementCount);
+//   // display landing page
+//   landingPage.classList.remove("hidden");
+// }
 // call create first game function
 let worldMatrix = [];
-createFirstGame();
+// createFirstGame();
