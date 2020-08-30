@@ -4,7 +4,6 @@ const landingPage = document.querySelector("#landingPage");
 // start button
 const startBtn = document.querySelector(".startBtn");
 startBtn.addEventListener("click", startGame);
-
 function startGame() {
   if (world.childElementCount === 0) {
     createMatrix();
@@ -18,6 +17,7 @@ function startGame() {
     }
   }
 }
+
 // add event listener to the restart game button to go back to the landing page
 restartGameButton.addEventListener("click", restartGame);
 function restartGame() {

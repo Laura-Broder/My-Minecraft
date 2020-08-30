@@ -96,14 +96,6 @@ function resetWorld(size) {
   createRock(groundHight);
   createTree(groundHight);
 }
-// create the game the first time the webpage is opened
-// function createFirstGame() {
-//   console.log(world.childElementCount);
-//   createMatrix();
-//   console.log(world.childElementCount);
-//   // display landing page
-//   landingPage.classList.remove("hidden");
-// }
+
 // call create first game function
 let worldMatrix = [];
-// createFirstGame();
